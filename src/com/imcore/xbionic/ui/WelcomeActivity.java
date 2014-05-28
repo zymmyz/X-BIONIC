@@ -12,6 +12,7 @@ import com.example.x_bionic.R;
 public class WelcomeActivity extends Activity {
 
 	private ProgressBar bar;
+
 	public void init() {
 		bar = ((ProgressBar) findViewById(R.id.progressbarid));
 		new Thread(new Runnable() {
@@ -21,6 +22,7 @@ public class WelcomeActivity extends Activity {
 						Intent intent = new Intent(WelcomeActivity.this,
 								FlashActivity.class);
 						WelcomeActivity.this.startActivity(intent);
+						finish();
 						return;
 					}
 					try {

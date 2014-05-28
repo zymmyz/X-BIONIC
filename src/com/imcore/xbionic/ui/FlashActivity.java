@@ -30,7 +30,7 @@ public class FlashActivity extends Activity {
 			super.handleMessage(msg);
 		}
 	};
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -55,30 +55,35 @@ public class FlashActivity extends Activity {
 		}
 		viewpager.setAdapter(new ViewPagerAdapter(list));
 		viewpager.setOnPageChangeListener(new ViewPagerChangeListener());
-		new Thread(){
-			public void run() {
-				for(int i = 0;i<list.size();i++){
-					Message msg = new Message();
-					msg.what = i;
-					handler.sendMessage(msg);
-					try {
-						if(i==list.size()-1){
-							try {
-								Thread.sleep(1500);
-							} catch (InterruptedException e) {
-								e.printStackTrace();
+		String args = getIntent().getStringExtra("help");
+		if ("".equals(args)||args==null) {
+			new Thread() {
+				public void run() {
+					for (int i = 0; i < list.size(); i++) {
+						Message msg = new Message();
+						msg.what = i;
+						handler.sendMessage(msg);
+						try {
+							if (i == list.size() - 1) {
+								try {
+									Thread.sleep(1500);
+								} catch (InterruptedException e) {
+									e.printStackTrace();
+								}
+								Intent intent = new Intent(FlashActivity.this,
+										LoginActivity.class);
+								startActivity(intent);
+								finish();
 							}
-							Intent intent = new Intent(FlashActivity.this,MainActivity.class);
-							startActivity(intent);
+							Thread.sleep(1500);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
 						}
-						Thread.sleep(1500);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
 					}
-				}
-			};
-		}.start();
-		
+				};
+			}.start();
+		}
+
 	}
 
 	private class ViewPagerAdapter extends PagerAdapter {
