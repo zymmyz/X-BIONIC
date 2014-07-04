@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2D2F31" >
+
+        <ImageView
+            android:id="@+id/iv_product_trivbe_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/head" />
+
+        <TextView
+            android:id="@+id/tv_tribe_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/iv_product_trivbe_count"
+            android:text="部落积分 : "
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_tribe_points_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@id/tv_tribe_points"
+            android:text="200"
+            android:textColor="#C3570E"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btn_tribe_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
+            android:background="@drawable/pen" />
+
+        <TextView
+            android:id="@+id/tv_convertible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_tribe_points"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/iv_product_trivbe_count"
+            android:text="可兑换抵用券 : "
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_convertible_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_tribe_points"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/tv_convertible"
+            android:text="0.00 "
+            android:textColor="#C3570E"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_yuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/tv_convertible"
+            android:layout_toRightOf="@id/tv_convertible_count"
+            android:text="元"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_upgrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_convertible"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/iv_product_trivbe_count"
+            android:text="达人升级进度表 "
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+        <ProgressBar
+            android:id="@+id/pb_upgrade"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="110dp"
+            android:layout_height="5dp"
+            android:layout_below="@id/tv_upgrade"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/iv_product_trivbe_count"
+            android:max="100"
+            android:progress="25" />
+
+        <TextView
+            android:id="@+id/tv_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_upgrade"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@id/pb_upgrade"
+            android:text="25% "
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ListView
+            android:id="@+id/lv_tribe_point"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/dottedline"
+            android:dividerHeight="0dp"
+            android:background="#333333" />
+    </RelativeLayout>
+
+</LinearLayout>

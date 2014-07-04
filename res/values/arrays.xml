@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="navi_items">
+        <item>X的活动</item>
+        <item>X的介绍</item>
+        <item>产品购买</item>
+        <item>达人故事</item>
+    </string-array>
+    
+    <string-array name="navi_category">
+        <item>类别</item>
+        <item>男装</item>
+        <item>女装</item>
+        <item>全部</item>
+    </string-array>
+    
+    <string-array name="navi_order">
+        <item>按价格升序排列</item>
+        <item>按价格降序排列</item>
+    </string-array>
+    
+</resources>

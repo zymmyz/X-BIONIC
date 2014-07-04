@@ -13,6 +13,7 @@ public class ImageCache {
 	 * 构造函数，初始化缓存时要有分配的最大内存
 	 */
 	private ImageCache() {
+		//以kb为单位，分配给该程序最大可用内存的八分之一作为缓存
 		int maxSize = (int) (Runtime.getRuntime().maxMemory() / 1024) / 8;
 		mCache = new LruCache<String, Bitmap>(maxSize);
 	}

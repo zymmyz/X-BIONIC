@@ -23,15 +23,21 @@ public class ImageFetcher {
 	}
 
 	public void fetch(String url, ImageView imageView) {
-		@SuppressWarnings("unchecked")
-		WeakReference<ImageWorkerTask> weakTask = (WeakReference<ImageWorkerTask>) imageView
-				.getTag();
-        if(weakTask!=null){
-        	imageView.setImageBitmap(null);
-        }
-        ImageWorkerTask task = new ImageWorkerTask(url, imageView);
-        imageView.setTag(task);
-        task.execute();
+		try{
+			@SuppressWarnings("unchecked")
+			WeakReference<ImageWorkerTask> weakTask = (WeakReference<ImageWorkerTask>)imageView.getTag();
+			if(weakTask!=null){
+				imageView.setImageBitmap(null);
+			}
+			ImageWorkerTask task = new ImageWorkerTask(url, imageView);
+			imageView.setTag(task);
+			task.execute();
+		}catch(Exception e){
+			e.printStackTrace();
+			ImageWorkerTask task = new ImageWorkerTask(url, imageView);
+			imageView.setTag(task);
+			task.execute();
+		}
 	}
 
 	/*
@@ -75,6 +81,7 @@ public class ImageFetcher {
 					ImageView imageView = weakImageView.get();
 					if (imageView != null && bitmap != null) {
 						imageView.setImageBitmap(bitmap);
+						System.out.println("set image");
 					}
 				}
 			}

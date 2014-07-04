@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".XIntroduceActivity" >
+    
+    
+     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_back" >
+
+        <Button
+            android:id="@+id/btn_search_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back_btn_normal" />
+
+        <TextView
+            android:id="@+id/tv_search_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="X的介绍"
+            android:textColor="@color/gray"
+            android:textSize="25sp" />
+        
+        <Button
+            android:id="@+id/btn_product_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/searchbtnpic" />
+        
+        
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lv_x_introduce"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
